@@ -16,6 +16,8 @@
 - [x] install html webpack plugin for cache busting _set output filename hashed_
 - [x] install webpack-merge _for different config files for dev and prod_
 - [x] require webpack common file for both dev and production config files
-- [ ] install webpack-dev-server for continuous build updates for development
-- [ ] configure webpack common file for plugins and loaders for use in both development and production
-- [ ]
+- [x] install webpack-dev-server for continuous build updates for development
+- [x] configure webpack common file for plugins and loaders for use in both development and production
+- [x] install html-loader, file-loader and clean-webpack-plugin for webpack _use deconstructor on v3_
+- [~] configure webpack to have multiple entry-points for other javascript libraries
+- [x] minifying html/css/js and extract css for performance only in production

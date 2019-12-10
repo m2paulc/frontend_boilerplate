@@ -1,18 +1,30 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require("path")
 const common = require("./webpack.common")
 const merge = require("webpack-merge")
 
 module.exports = {
   entry: "./src/index.js",
-  plugins: [new HtmlWebpackPlugin({
-    template: "./src/index.html"
-  })],
   module: {
     rules: [
       {
-        test: /\.scss$/,
-        use: ["style-loader", "css-loader", "sass-loader"]
+        test: /\.html$/,
+        use: ["html-loader"]
+      },
+      {
+        test: /\.(svg|png|jpe?g|gif)$/i,
+        // use: {
+        loader: "file-loader",
+        options: {
+          name(file) {
+            if (process.env.NODE_DEV === 'development') {
+              return '[path][name].[ext]'
+            }
+            return '[contentHash].[ext]'
+          },
+          outputPath: "./assets",
+          esModule: false
+        }
+        // }
       }
     ]
   }
